@@ -550,7 +550,7 @@ const additionalDetailsG4 = (
 
 // ...
 
-const currencyFormatter = (value: any) => {
+export const currencyFormatter = (value: any) => {
   let unit = "";
   let tmp = "0";
   if (value) {

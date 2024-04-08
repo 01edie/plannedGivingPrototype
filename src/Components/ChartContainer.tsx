@@ -11,7 +11,7 @@ import SaveAltIcon from "@mui/icons-material/SaveAlt";
 
 type Props = {
   heading?: string;
-  title: string;
+  title?: string;
   children: React.ReactNode;
   additionalDetails?: React.ReactNode;
   lastItem?: boolean;
@@ -44,7 +44,7 @@ function ChartContainer({
         >
           <Box />
           <Typography textAlign="center" variant="h6">
-            {title}
+            {title??''}
           </Typography>
           <IconButton onClick={() => {}}>
             <SaveAltIcon />

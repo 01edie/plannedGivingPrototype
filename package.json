@@ -1,5 +1,5 @@
 {
-  "name": "material-ui-vite-ts",
+  "name": "planned-giving",
   "private": true,
   "version": "5.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@hookform/resolvers": "^3.3.4",
+    "@inovua/reactdatagrid-community": "^5.10.2",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/x-date-pickers": "^7.1.1",
