@@ -9,7 +9,10 @@ import {
   ResponsiveContainer,
   Sector,
   Cell,
+  PieLabel,
 } from "recharts";
+import { PieSectorDataItem } from "recharts/types/polar/Pie";
+import { ActiveShape } from "recharts/types/util/types";
 const data = [
   { name: "Restricted Funds", value: 2024432.84 },
   { name: "Unrestricted Funds", value: 2290508.11 },
@@ -27,7 +30,7 @@ const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const RADIAN = Math.PI / 180;
 
-const renderCustomizedLabel = ({
+const renderCustomizedLabel: PieLabel<any> = ({
   cx,
   cy,
   midAngle,
@@ -53,7 +56,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-const renderActiveShape1 = (props) => {
+const renderActiveShape1: ActiveShape<PieSectorDataItem> = (props:any) => {
   const RADIAN = Math.PI / 180;
   const {
     cx,
@@ -125,7 +128,7 @@ const renderActiveShape1 = (props) => {
     </g>
   );
 };
-const renderActiveShape2 = (props) => {
+const renderActiveShape2: ActiveShape<PieSectorDataItem> = (props:any) => {
   const RADIAN = Math.PI / 180;
   const {
     cx,
@@ -207,12 +210,12 @@ function Charts({}: Props) {
   const [pieState2, setPieState2] = useState({
     activeIndex: 0,
   });
-  const onPie1Enter = (_, index: number) => {
+  const onPie1Enter = (_:any, index: number) => {
     setPieState1({
       activeIndex: index,
     });
   };
-  const onPie2Enter = (_, index: number) => {
+  const onPie2Enter = (_:any, index: number) => {
     setPieState2({
       activeIndex: index,
     });
