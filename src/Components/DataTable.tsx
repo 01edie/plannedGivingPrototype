@@ -60,13 +60,15 @@ function DataTable({ columns, data, sheetName }: Props) {
   // console.log({headerKeys, headers, columnsData})
 
   return (
-    <Box>
+    <Box >
       <ReactDataGrid
         // style={gridStyle}
         idProperty="uniqueId"
         columns={columns}
         dataSource={data}
         handle={setGridRef}
+        // nativeScroll
+        // scrollProps={{scrollThumbWidth:0}}
       />
       <Stack mt={1} alignItems="end">
         <Button
