@@ -548,6 +548,7 @@ function Charts({}: Props) {
         <ChartContainer
           chartHeight={450}
           title="EXPENSES/TOTAL VALUE OF THE ACCOUNT"
+          id={7}
         >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={400} height={400}>
@@ -578,6 +579,7 @@ function Charts({}: Props) {
         <ChartContainer
           chartHeight={450}
           title="EXPENSES/TOTAL ANNUAL CASHFLOW EXCLUDING DONATIONS"
+          id={8}
         >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart width={600} height={600}>
@@ -607,6 +609,7 @@ function Charts({}: Props) {
         <ChartContainer
           title="Time Value of a Donated Life Insurance Policy Versus SIP Option"
           additionalDetails={additionalDetailsL1}
+          id={9}
         >
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
@@ -642,7 +645,7 @@ function Charts({}: Props) {
             </LineChart>
           </ResponsiveContainer>
         </ChartContainer>
-        <ChartContainer>
+        <ChartContainer id={10}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={l2}

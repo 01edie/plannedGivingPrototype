@@ -577,6 +577,7 @@ function EntryGraphs({}: Props) {
           title="How long will it take to save donations for project?"
           heading="Savings Method"
           additionalDetails={additionalDetailsG1}
+          id={1}
         >
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
@@ -617,6 +618,7 @@ function EntryGraphs({}: Props) {
           title="Loan Balance"
           heading="Loan Method"
           additionalDetails={additionalDetailsG2}
+          id={2}
         >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -653,7 +655,7 @@ function EntryGraphs({}: Props) {
           </ResponsiveContainer>
         </ChartContainer>
         {/* managing the premium */}
-        <ChartContainer title="Managing The Premium">
+        <ChartContainer title="Managing The Premium" id={3}>
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart
               width={500}
@@ -702,7 +704,7 @@ function EntryGraphs({}: Props) {
           </ResponsiveContainer>
         </ChartContainer>
         {/* Donations in Excess of Life Insurance Premium */}
-        <ChartContainer title="Donations in Excess of Life Insurance Premium">
+        <ChartContainer title="Donations in Excess of Life Insurance Premium" id={4}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               width={450}
@@ -730,7 +732,7 @@ function EntryGraphs({}: Props) {
           </ResponsiveContainer>
         </ChartContainer>
         {/* Growth of Reserve Fund With and Without SOcial Impact Partnership */}
-        <ChartContainer title="Donations in Excess of Life Insurance Premium">
+        <ChartContainer title="Donations in Excess of Life Insurance Premium" id={5}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               width={500}
@@ -761,6 +763,7 @@ function EntryGraphs({}: Props) {
         <ChartContainer
           title="Servicing Cost Comparison - Traditional Loan vs. Social Impact Partnership"
           additionalDetails={additionalDetailsG4}
+          id={6}
         >
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart

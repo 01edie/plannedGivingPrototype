@@ -5,10 +5,11 @@ import { CssBaseline } from "@mui/material";
 import { RouterProvider } from "react-router-dom";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import theme from "./config/theme";
 import { router } from "./config/router";
-
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <CssBaseline />
         <RouterProvider router={router} />
       </ThemeProvider>
+      <ToastContainer />
     </LocalizationProvider>
   </React.StrictMode>
 );

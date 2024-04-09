@@ -8,6 +8,8 @@ import {
   Divider,
 } from "@mui/material";
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
+import * as htmlToImage from "html-to-image";
+import download from "downloadjs";
 
 type Props = {
   heading?: string;
@@ -16,6 +18,7 @@ type Props = {
   additionalDetails?: React.ReactNode;
   lastItem?: boolean;
   chartHeight?: number;
+  id: number;
 };
 
 function ChartContainer({
@@ -25,9 +28,24 @@ function ChartContainer({
   additionalDetails,
   lastItem,
   chartHeight,
+  id,
 }: Props) {
+  const saveChart = (chartTitle: string | undefined) => {
+    const chartEl = document.getElementById(`chart-content${id}`)!;
+    const downloadButtonEl = document.getElementById(`download-button${id}`)!;
+    downloadButtonEl.style.visibility = "hidden";
+    chartEl.style.paddingRight = "8px";
+    htmlToImage.toPng(chartEl).then((dataUrl) => {
+      download(dataUrl, `${chartTitle ?? "chart"}.png`);
+    });
+    setTimeout(() => {
+      downloadButtonEl.style.visibility = "visible";
+      chartEl.style.paddingRight = "0px";
+    }, 1500);
+  };
+
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} id={`chart-content${id}`} bgcolor="white">
       {heading ? (
         <Typography variant="h6" mb={2}>
           {heading}
@@ -44,9 +62,14 @@ function ChartContainer({
         >
           <Box />
           <Typography textAlign="center" variant="h6">
-            {title??''}
+            {title ?? ""}
           </Typography>
-          <IconButton onClick={() => {}}>
+          <IconButton
+            id={`download-button${id}`}
+            onClick={() => {
+              saveChart(title);
+            }}
+          >
             <SaveAltIcon />
           </IconButton>
         </Box>
