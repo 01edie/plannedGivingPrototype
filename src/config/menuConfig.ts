@@ -26,7 +26,6 @@ import InsuranceQuote from "../views/InsuranceQuote";
 import Debt from "../views/Debt";
 import CalculationsLoan from "../views/CalculationsLoan";
 
-
 type MenuConfig = {
   name: string;
   icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
@@ -106,3 +105,5 @@ export const menuList = [
     element: CalculationsLoan,
   },
 ];
+
+export const domSensitivePaths = ["/entry-graphs", "charts"];

@@ -32,6 +32,7 @@ function ChartContainer({
 }: Props) {
   const saveChart = (chartTitle: string | undefined) => {
     const chartEl = document.getElementById(`chart-content${id}`)!;
+    // const chartEl= chartElO.cloneNode(true)
     const downloadButtonEl = document.getElementById(`download-button${id}`)!;
     downloadButtonEl.style.visibility = "hidden";
     chartEl.style.paddingRight = "8px";

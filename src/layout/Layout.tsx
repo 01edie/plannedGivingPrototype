@@ -16,7 +16,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 
-import { menuList } from "../config/menuConfig";
+import { domSensitivePaths, menuList } from "../config/menuConfig";
 import DataContext from "../context/DataContext";
 
 function Copyright(props: any) {
@@ -47,17 +47,22 @@ const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })<AppBarProps>(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
+
+  transition: domSensitivePaths.includes(window.location.pathname)
+    ? "none"
+    : theme.transitions.create(["width", "margin"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
+    transition: domSensitivePaths.includes(window.location.pathname)
+      ? "none"
+      : theme.transitions.create(["width", "margin"], {
+          easing: theme.transitions.easing.sharp,
+          duration: theme.transitions.duration.enteringScreen,
+        }),
   }),
 }));
 
@@ -68,17 +73,29 @@ const Drawer = styled(MuiDrawer, {
     position: "relative",
     whiteSpace: "nowrap",
     width: drawerWidth,
+
+    // test
+    // marginTop:64,
+    // overflowY:'hidden',
+    // height:'calc(100% - 64px)',
+
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
+      duration: domSensitivePaths.includes(window.location.pathname)
+        ? 0
+        : theme.transitions.duration.enteringScreen,
+      // duration: theme.transitions.duration.enteringScreen,
     }),
     boxSizing: "border-box",
     ...(!open && {
       overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
+      transition: domSensitivePaths.includes(window.location.pathname)
+        ? "none"
+        : theme.transitions.create("width", {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+            // duration: theme.transitions.duration.leavingScreen,
+          }),
       width: theme.spacing(7),
       [theme.breakpoints.up("sm")]: {
         width: theme.spacing(9),
@@ -86,8 +103,6 @@ const Drawer = styled(MuiDrawer, {
     }),
   },
 }));
-
-
 
 export default function Layout() {
   const [mainData, setMainData] = React.useState({
@@ -111,6 +126,8 @@ export default function Layout() {
   };
   const navigate = useNavigate();
   const location = useLocation();
+
+  console.log(domSensitivePaths.includes(location.pathname));
 
   return (
     <DataContext.Provider value={{ mainData, updateData: setMainData }}>
