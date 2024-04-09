@@ -76,7 +76,7 @@ const Drawer = styled(MuiDrawer, {
 
     // test
     // marginTop:64,
-    // overflowY:'hidden',
+    overflowY:'hidden',
     // height:'calc(100% - 64px)',
 
     transition: theme.transitions.create("width", {
@@ -127,7 +127,6 @@ export default function Layout() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(domSensitivePaths.includes(location.pathname));
 
   return (
     <DataContext.Provider value={{ mainData, updateData: setMainData }}>

@@ -106,4 +106,4 @@ export const menuList = [
   },
 ];
 
-export const domSensitivePaths = ["/entry-graphs", "charts"];
+export const domSensitivePaths = ["/entry-graphs", "/charts"];
