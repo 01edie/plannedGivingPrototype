@@ -1,12 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import {
-  Box,
-  Button,
-  Grid,
-  InputAdornment,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, InputAdornment, Typography } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import PercentIcon from "@mui/icons-material/Percent";
@@ -15,6 +8,7 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import DataContext from "../context/DataContext";
+import TextField from "../Components/TextField";
 
 type Props = {};
 
@@ -130,7 +124,7 @@ function Dashboard({}: Props) {
   }, []);
 
   return (
-    <Box padding={2} pb={2} bgcolor="white" borderRadius={2} boxShadow={2}>
+    <Box padding={2} pb={2} minHeight='calc(100vh - 64px - 36px - 32px - 53px)' bgcolor="white" borderRadius={2} boxShadow={2}>
       <Typography variant="h5">Dashboard</Typography>
       <Grid
         component="form"
@@ -146,7 +140,7 @@ function Dashboard({}: Props) {
           </Box>
         </Grid>
         {/* project cost */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Project Cost"
             fullWidth
@@ -166,7 +160,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* inflation rate */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Inflation Rate"
             fullWidth
@@ -186,7 +180,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* construction cost inflation */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Construction Cost Inflation"
             fullWidth
@@ -206,7 +200,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* annual donation amount */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Annual Donation Amount"
             fullWidth
@@ -226,7 +220,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* annual roi */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Annual ROI"
             fullWidth
@@ -246,7 +240,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* loan interest rate */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Loan Interest Rate"
             fullWidth
@@ -266,7 +260,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* insurance benefit amount */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Insurance Benefit Amount"
             fullWidth
@@ -287,7 +281,7 @@ function Dashboard({}: Props) {
         </Grid>
 
         {/* insurance premium rate */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Insurance Premium Rate"
             fullWidth
@@ -313,7 +307,7 @@ function Dashboard({}: Props) {
           </Box>
         </Grid>
         {/* year of passing */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <Controller
             name="yearOfPassing"
             render={({ field }) => {
@@ -322,7 +316,12 @@ function Dashboard({}: Props) {
               return (
                 <DatePicker
                   sx={{ width: "100%" }}
-                  slotProps={{ textField: { size: "small" } }}
+                  slotProps={{
+                    textField: {
+                      size: "small",
+                      InputLabelProps: { sx: { fontSize: 14 } },
+                    },
+                  }}
                   label="Year of Passing"
                   views={["year"]}
                   disablePast
@@ -337,7 +336,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* client age */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Client Age"
             {...register("clientAge")}
@@ -348,7 +347,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* estate donation */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Estate Donation"
             fullWidth
@@ -370,7 +369,7 @@ function Dashboard({}: Props) {
         {/* <Grid item xs={12} md={6} /> */}
 
         {/* premium amount */}
-        <Grid mb={1} item xs={12} sm={6} md={4}>
+        <Grid mb={1} item xs={12} sm={6} md={4} lg={3}>
           <TextField
             label="Premium Amount"
             fullWidth
