@@ -124,7 +124,7 @@ function Dashboard({}: Props) {
   }, []);
 
   return (
-    <Box padding={2} pb={2} minHeight='calc(100vh - 64px - 36px - 32px - 53px)' bgcolor="white" borderRadius={2} boxShadow={2}>
+    <Box padding={2} pb={2}  bgcolor="white" borderRadius={2} boxShadow={2}>
       <Typography variant="h5">Dashboard</Typography>
       <Grid
         component="form"

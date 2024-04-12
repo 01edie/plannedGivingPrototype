@@ -76,7 +76,7 @@ const Drawer = styled(MuiDrawer, {
 
     // test
     // marginTop:64,
-    overflowY:'hidden',
+    overflowY: "hidden",
     // height:'calc(100% - 64px)',
 
     transition: theme.transitions.create("width", {
@@ -126,7 +126,6 @@ export default function Layout() {
   };
   const navigate = useNavigate();
   const location = useLocation();
-
 
   return (
     <DataContext.Provider value={{ mainData, updateData: setMainData }}>
@@ -215,8 +214,16 @@ export default function Layout() {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Outlet />
+          <Container
+            maxWidth="lg"
+            sx={{
+              mt: 4,
+              mb: 4,
+            }}
+          >
+            <Box minHeight="calc(100vh - 64px - 36px - 32px - 53px)">
+              <Outlet />
+            </Box>
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
