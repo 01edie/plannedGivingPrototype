@@ -130,23 +130,23 @@ function Dashboard({}: Props) {
   }, []);
 
   return (
-    <Box padding={2} pb={4} bgcolor="white" borderRadius={2} boxShadow={2}>
-      <Typography variant="h4">Dashboard</Typography>
+    <Box padding={2} pb={2} bgcolor="white" borderRadius={2} boxShadow={2}>
+      <Typography variant="h5">Dashboard</Typography>
       <Grid
         component="form"
-        my={2}
+        my={1}
         onSubmit={handleSubmit(onSubmit)}
         container
         width="100%"
         spacing={1}
       >
-        <Grid item mb={2} xs={12}>
-          <Box bgcolor="#e0e0e0" p={2} borderRadius={1}>
+        <Grid item mb={1} xs={12}>
+          <Box bgcolor="#e0e0e0" p={1} borderRadius={1}>
             <Typography variant="h6">Variables for Scenario</Typography>
           </Box>
         </Grid>
         {/* project cost */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Project Cost"
             fullWidth
@@ -166,7 +166,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* inflation rate */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Inflation Rate"
             fullWidth
@@ -186,7 +186,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* construction cost inflation */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Construction Cost Inflation"
             fullWidth
@@ -206,7 +206,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* annual donation amount */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Annual Donation Amount"
             fullWidth
@@ -226,7 +226,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* annual roi */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Annual ROI"
             fullWidth
@@ -246,7 +246,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* loan interest rate */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Loan Interest Rate"
             fullWidth
@@ -266,7 +266,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* insurance benefit amount */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Insurance Benefit Amount"
             fullWidth
@@ -287,7 +287,7 @@ function Dashboard({}: Props) {
         </Grid>
 
         {/* insurance premium rate */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Insurance Premium Rate"
             fullWidth
@@ -307,13 +307,13 @@ function Dashboard({}: Props) {
           />
         </Grid>
 
-        <Grid my={2} item xs={12}>
-          <Box bgcolor="#e0e0e0" p={2} borderRadius={1}>
+        <Grid my={1} item xs={12}>
+          <Box bgcolor="#e0e0e0" p={1} borderRadius={1}>
             <Typography variant="h6">Optional Scenario</Typography>
           </Box>
         </Grid>
         {/* year of passing */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <Controller
             name="yearOfPassing"
             render={({ field }) => {
@@ -337,7 +337,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* client age */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Client Age"
             {...register("clientAge")}
@@ -348,7 +348,7 @@ function Dashboard({}: Props) {
           />
         </Grid>
         {/* estate donation */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={4}>
           <TextField
             label="Estate Donation"
             fullWidth
@@ -367,10 +367,10 @@ function Dashboard({}: Props) {
             helperText={errors.estateDonation?.message}
           />
         </Grid>
-        <Grid item xs={12} md={6} />
+        {/* <Grid item xs={12} md={6} /> */}
 
         {/* premium amount */}
-        <Grid mt={3} mb={1} item xs={12} md={6}>
+        <Grid mb={1} item xs={12} sm={6} md={4}>
           <TextField
             label="Premium Amount"
             fullWidth

@@ -570,7 +570,7 @@ function EntryGraphs({}: Props) {
   const { mainData } = useContext(DataContext)!;
   return (
     <Box padding={2} pb={4} bgcolor="white" borderRadius={2} boxShadow={2}>
-      <Typography variant="h4">Entry Graphs</Typography>
+      <Typography variant="h5">Entry Graphs</Typography>
       <Grid container my={2} spacing={1}>
         {/* savings method */}
         <ChartContainer

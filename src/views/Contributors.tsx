@@ -6,7 +6,7 @@ type Props = {};
 function Contributors({}: Props) {
   return (
     <Box padding={2} pb={4} bgcolor="white" borderRadius={2} boxShadow={2}>
-      <Typography variant="h4">Contributors</Typography>
+      <Typography variant="h5">Contributors</Typography>
     </Box>
   );
 }

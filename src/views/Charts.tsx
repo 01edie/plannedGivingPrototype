@@ -542,7 +542,7 @@ function Charts({}: Props) {
 
   return (
     <Box padding={2} pb={4} bgcolor="white" borderRadius={2} boxShadow={2}>
-      <Typography variant="h4">Charts</Typography>
+      <Typography variant="h5">Charts</Typography>
       <Grid container my={2} spacing={1}>
         {/* EXPENSES/TOTAL VALUE OF THE ACCOUNT */}
         <ChartContainer

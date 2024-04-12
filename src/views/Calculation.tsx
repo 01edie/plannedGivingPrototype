@@ -208,7 +208,7 @@ const columns = [
 function Calculation({}: Props) {
   return (
     <Box padding={2} pb={4} bgcolor="white" borderRadius={2} boxShadow={2}>
-      <Typography variant="h4">Calculation</Typography>
+      <Typography variant="h5">Calculation</Typography>
       <Box my={2}>
         <DataTable data={dataSource} columns={columns} />
       </Box>

@@ -6,7 +6,7 @@ type Props = {};
 function Debt({}: Props) {
   return (
     <Box padding={2} pb={4} bgcolor="white" borderRadius={2} boxShadow={2}>
-      <Typography variant="h4">Debt</Typography>
+      <Typography variant="h5">Debt</Typography>
     </Box>
   );
 }
